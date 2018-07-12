@@ -20,7 +20,7 @@ Fetching Example w/ mail address, mail folder, messages date:
 
 ::
 
-        $ post_sender -e 'Arseni.Dudko@burberry.com' -f 'Noreply/FailureYmkt' -d '30-May-2018' 
+        $ post_sender -e 'Arseni.Dudko@bur.com' -f 'Noreply/FailureYmkt' -d '30-May-2018' 
 
 Read a given inventory file, parse the JSON, and add, remove or update systems users info based on file.
 
@@ -43,7 +43,7 @@ Example messages JSON file:
             "HierarchyId": "ATG",
             "Name": "catXXXX",
             "Description": "Crossbody Bags",
-            "ZZ_URL": "https://us.burberry.com/mens-bags/crossbody-bags/",
+            "ZZ_URL": "https://us.bur.com/mens-bags/crossbody-bags/",
             "Language": "EN"
           }],
           "Products": [{
@@ -51,8 +51,8 @@ Example messages JSON file:
             "Id": "123123123",
             "Name": "London Check Crossbody Bag",
             "Description": "<ul><li>Crossbody bag in London check</li><li>Foldover top, internal zip pocket</li><li>Webbed canvas shoulder strap</li><li>Back zip pocket</li></ul>",
-            "ImageUrl": "https://assets.burberry.com/is/image/Burberryltd/9d25596b7519639078ba8d7b1d1a9ea80058953d.jpg?$BBY_V2_SL_4X3$",
-            "NavigationURL": "https://us.burberry.com/london-check-crossbody-bag-p39962151",
+            "ImageUrl": "https://assets.bur.com/is/image/Burltd/9d25596b7519639078ba8d7b1d1a9ea80058953d.jpg?$BBY_V2_SL_4X3$",
+            "NavigationURL": "https://us.bur.com/london-check-crossbody-bag-p39962151",
             "CategoryId": "catXXXXX",
             "HierarchyId": "ATG",
             "ZZ_BRAND": null,
@@ -66,7 +66,7 @@ Example messages JSON file:
             "Timestamp": "/Date(1487253102000)/",
             "LanguageDescription": "EN",
             "CountryDescription": "US",
-            "EMailAddress": "dodo.toto@burberry.com",
+            "EMailAddress": "dodo.toto@bur.com",
             "GenderDescription": null,
             "TitleDescription": "Miss",
             "IsConsumer": false,
@@ -83,7 +83,7 @@ Example messages JSON file:
             "Timestamp": "/Date(1527681906000)/",
             "Currency": "USD",
             "Amount": "750",
-            "StartingPointUrl": "https://us.burberry.com/abandoned-cart/xLIOgBgPij0IESQo9In4bw==",
+            "StartingPointUrl": "https://us.bur.com/abandoned-cart/xLIOgBgPij0IESQo9In4bw==",
             "ZZ_PRICE_LIST_LOCALE": "en_US_USD",
             "ZZ_DELIVERY_TO_STORE": false,
             "ZZ_PR_TAX_TOTAL": "0",
@@ -114,8 +114,8 @@ Example messages JSON file:
               "Quantity": "1",
               "Name": "London Check Crossbody Bag",
               "Description": "<ul><li>Crossbody bag in London check</li><li>Foldover top, internal zip pocket</li><li>Webbed canvas shoulder strap</li",
-              "ImageUrl": "https://assets.burberry.com/is/image/Burberryltd/9d25596b7519639078ba8d7b1d1a9ea80058953d.jpg?$BBY_V2_SL_4X3$",
-              "NavigationURL": "https://us.burberry.com/london-check-crossbody-bag-p39962151",
+              "ImageUrl": "https://assets.bur.com/is/image/Burbltd/9d25596b7519639078ba8d7b1d1a9ea80058953d.jpg?$BBY_V2_SL_4X3$",
+              "NavigationURL": "https://us.bur.com/london-check-crossbody-bag-p39962151",
               "ZZ_BRAND": null,
               "ZZ_LANGUAGE": "EN",
               "ZZ_COLOUR": "Navy/black",
