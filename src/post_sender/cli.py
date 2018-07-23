@@ -42,7 +42,7 @@ def main():
         if 'attachments' not in os.listdir(curr_dir):
             os.mkdir('attachments')
 
-        download_folder = curr_dir + "/attachments/"
+        download_folder = os.getcwd() + "/attachments/"
 
         if args.email and args.folder and args.date and not args.password:
             args.password = getpass.getpass('Enter a password: ')
