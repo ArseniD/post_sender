@@ -4,7 +4,7 @@ from argparse import ArgumentParser, SUPPRESS
 def create_parser():
     parser = ArgumentParser(
         usage="""
-        Example fetch: post_sender -e 'Arseni.Dudko@burberry.com' -f 'Inbox/Noreply/FailureYmkt' -d '30-May-2018'
+        Example fetch: post_sender -e "Arseni.Dudko@burberry.com" -f "Inbox/Noreply/FailureYmkt" -d "30-May-2018"
         Example send:  post_sender -s one/all
         """,
         description="""
@@ -17,11 +17,11 @@ def create_parser():
     optional = parser._action_groups.pop()
     required = parser.add_argument_group('required arguments')
 
-    required.add_argument("-e", dest="email",    help="Email address (example: 'Arseni.Dudko@burberry.com')")
-    required.add_argument("-f", dest="folder",   help="Mail folder (example: 'Inbox/Noreply/FailureYmkt')")
-    required.add_argument("-d", dest="date",     help="Messages date (example: '30-May-2018')")
-    parser.add_argument("-p",   dest="password", help=SUPPRESS)
-    optional.add_argument('-s', choices=['all', 'one'], dest="send", help="Send post request from each file in 'attachments' folder")
+    required.add_argument('-e', dest='email',    help='Email address (example: "Arseni.Dudko@burberry.com")')
+    required.add_argument('-f', dest='folder',   help='Mail folder (example: "Inbox/Noreply/FailureYmkt")')
+    required.add_argument('-d', dest='date',     help='Messages date (example: "30-May-2018")')
+    parser.add_argument('-p',   dest='password', help=SUPPRESS)
+    optional.add_argument('-s', choices=['all', 'one'], dest='send', help="Send post request from each file in 'attachments' folder")
     parser._action_groups.append(optional)
     return parser
 
@@ -70,7 +70,7 @@ def main():
                 post_data(file_name, content)
                 sys.exit(1)
         else:
-            print "Please input all arguments: -e 'email' -f 'inbox_folder' -d 'date'"
+            print 'Please input all arguments: -e "email" -f "inbox_folder" -d "date"'
 
     except KeyboardInterrupt, err:
         print err
