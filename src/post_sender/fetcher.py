@@ -44,7 +44,7 @@ class FetchEmail():
                     fp.close()
         return att_path
 
-    def fetch_messages(self, error_date):
+    def fetch_messages(self, subject, error_date):
         """
         Find all email by search query parameter on specified date
 
@@ -55,9 +55,8 @@ class FetchEmail():
         objDate = datetime.datetime.strptime(error_date, '%d-%b-%Y')
         since_date = (objDate - datetime.timedelta(hours=2)).strftime("%d-%b-%Y") #Include objects UK time differences
         before_date = (objDate + datetime.timedelta(hours=24)).strftime("%d-%b-%Y")
-        subject = 'PROD: Abandoned Cart ATG to yMkt - yMKT ERROR'
-        searchQuery = '(SUBJECT "{0}" SINCE {1} BEFORE {2})'.format(subject, since_date, before_date)
 
+        searchQuery = '(SUBJECT "{0}" SINCE {1} BEFORE {2})'.format(subject, since_date, before_date)
         result, messages = self.connection.search(None, searchQuery)
         pbar = tqdm(messages[0].split())
 
@@ -81,6 +80,3 @@ class FetchEmail():
 
         self.error = "Failed to retreive emails."
         return emails
-
-
-
