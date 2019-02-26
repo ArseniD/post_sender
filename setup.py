@@ -5,7 +5,7 @@ with open('README.rst', 'r') as f:
 
 setup(
     name='post_sender',
-    version='0.1.3',
+    version='0.1.4',
     description='Resend yMKT Abandoned Basket and Sign UP messages',
     long_description=readme,
     author='Arseni Dudko',

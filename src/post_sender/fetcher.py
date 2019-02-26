@@ -2,6 +2,7 @@ import email
 import imaplib
 import datetime
 import os
+import fnmatch
 
 from tqdm import tqdm
 
@@ -34,13 +35,16 @@ class FetchEmail():
         for part in msg.walk():
             if part.get_filename() is not None:
                 filename = part.get_filename()
+                #if fnmatch.fnmatch(filename, '.txt'):
+                #    att_path = os.path.join(download_folder + str(fcount) + filename)
+                #else:
                 att_path = os.path.join(download_folder + filename)
 
                 if not os.path.isfile(att_path):
                     fp = open(att_path, 'wb')
                     fp.write(part.get_payload(decode=True))
                     fcount += 1
-                    print "{0} attachment(s) fetched\n------\n".format(fcount)
+                    print("{0} attachment(s) fetched\n------\n").format(fcount)
                     fp.close()
         return att_path
 
@@ -67,16 +71,16 @@ class FetchEmail():
                 try:
                     result, data = self.connection.fetch(message, '(RFC822)')
                 except:
-                    print "No new emails to read."
+                    print("No new emails to read.")
                     self.close_connection()
                     exit()
 
                 msg = email.message_from_string(data[0][1])
-                if isinstance(msg, str) == False:
+                if isinstance(msg, str) is False:
                     emails.append(msg)
 
             return emails
-        print "\n"
+        print("\n")
 
         self.error = "Failed to retreive emails."
         return emails

@@ -1,7 +1,7 @@
 post_sender
 ========
 
-CLI for resending yMKT Abandoned Basket messages.
+CLI for downloading and resending yMKT Abandoned Basket/ATG SignUp/Farfetch messages.
 
 Preparing for Development
 --------------------------------
@@ -9,6 +9,7 @@ Preparing for Development
 1. Ensure ``pip`` and ``pipenv`` are installed.
 2. Clone repository: ``git clone https://github.com/ArseniD/post_sender.git``
 3. Fetch development dependencies: ``make install``
+4. (Optionally) build and install from source: ``python setup.py bdist_wheel && sudo pip install dist/post_sender-0.1.4-py27-none-any.whl``
 
 Usage
 -------
@@ -22,13 +23,17 @@ Fetching Example w/ mail address, mail folder, messages date:
 
         $ post_sender -e 'Arseni.Dudko@bur.com' -f 'Noreply/FailureYmkt' -d '30-May-2018' 
 
-Read a given inventory file, parse the JSON, and add, remove or update systems users info based on file.
+Read a given inventory file, parse the JSON/CSV, and add, remove or update systems users info based on file.
 
 Posting Example w/ messages path:
 
 ::
 
-        $ post_sender -s /home/user/attachements
+        $ post_sender -s one_cart
+        $ post_sender -s one_sign
+        $ post_sender -s all_cart
+        $ post_sender -s all_sign
+        $ post_sender -s all_farfetch
 
 Example messages JSON file:
 
@@ -128,19 +133,3 @@ Example messages JSON file:
             }]
           }]
         }
-
-
-Running Tests
------------------
-
-Run tests locally using ``make`` if virtualenv is active:
-
-::
-
-        $ make
-
-If virtualenv isn't active then use:
-
-::
-
-        $ pipenv run make
