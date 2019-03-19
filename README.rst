@@ -14,7 +14,7 @@ Preparing for Development
 Usage
 -------
 
-Takes a email address, mail folder, massages date, asking about password and fetch all messages on specified date into 'attachments' folder.
+Takes a email address, mail folder, massages date, asking about password and fetch all messages on specified date into 'attachments' folder with specific prefix.
 
 **Fetching Example**:
 
@@ -23,7 +23,7 @@ Takes a email address, mail folder, massages date, asking about password and fet
         $ post_sender -e 'Arseni.Dudko@bur.com' -f 'Noreply/FailureYmkt' -d '30-May-2018' 
 
 
-Read a given inventory file, parse the JSON/CSV, and add, remove or update systems users info based on file.
+Based on type of request, read a given JSON file or all files in folder and send them one by one to CastIron queue
 
 **Posting Example**:
 
